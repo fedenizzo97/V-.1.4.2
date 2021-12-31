@@ -1,0 +1,35 @@
+{% extends "AppCovid/padre.html" %}
+
+{% load static %} 
+
+        {% block contenido2 %} 
+
+
+            <h1 class="mb-1">Formularios para editar Guantes: </h1>
+
+        {% endblock %}
+
+        {% block contenido %} 
+
+            {% if miFormulario1.error %} 
+            <p> ERROR: Intenta Nuevamente </p>
+            {% endif %}
+
+            <form action="" method= "POST"> {% csrf_token %}
+
+            <table>
+            {{ miFormulario1.as_table }}
+
+            <table>
+
+        
+
+            <input type= "submit" value= "Cargar Datos" >
+
+
+
+
+
+            </form>
+
+{% endblock %}

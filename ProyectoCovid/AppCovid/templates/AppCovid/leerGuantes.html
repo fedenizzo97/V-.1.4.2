@@ -1,0 +1,37 @@
+{% extends "AppCovid/padre.html" %}
+
+
+{% load static %}
+
+        {% block contenido2 %}
+            <h1 class="mb-1">Aca veo los guantes de la base de datos: </h1>
+        {% endblock %}
+
+
+        {% block contenido %}
+
+
+            
+            {% for g in guante %}
+
+
+                <li>Guantes:  {{ g }}  </li>
+                <button>
+
+                    <a href="{% url 'EliminarGuante' g.marca %}"> Eliminar </a>
+                    
+                    <a href="{% url 'EditarGuante' g.marca %}"> Editar </a>
+
+
+                </button>
+                <br>
+
+
+            {% endfor %}
+
+            <a href="guantesFormulario"> Agregar otra marca de Guantes </a> 
+
+
+         
+
+        {% endblock %}
